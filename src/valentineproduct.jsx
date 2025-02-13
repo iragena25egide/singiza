@@ -38,10 +38,13 @@ const ShopValentine = () => {
   ];
 
   return (
-    <div className="p-20 px-20 bg-gray-50"> 
-      <div className="flex flex-col items-start mb-4">
-        <h1 className="font-bold" style={{ fontSize: 30, marginLeft: 30 }}>Shop <span className="text-lightblue4">Best</span> Hoodies</h1>
-        <select className="mt-2 p-2 border rounded-md self-end bg-blue-200" style={{ width: 200 ,borderWidth:2,borderColor:"#50AFE4"}}>
+    <div className="p-20 md:p-20 bg-gray-50 w-full"> 
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+        <h1 className="font-bold text-lg md:text-2xl ml-2 md:ml-8 whitespace-nowrap">
+          Shop <span className="text-black">Best</span> Hoodies
+        </h1>
+        <select className="mt-2 md:mt-0 p-2 border rounded-md w-[90%] md:w-[200px] self-start md:self-end border-2 border-gray-300">
           <option>Featured</option>
           <option>Best selling</option>
           <option>Alphabetically, A-Z</option>
@@ -53,39 +56,44 @@ const ShopValentine = () => {
         </select>
       </div>
       
-      <div className="flex gap-10"> 
-        <div className="w-1/4 pr-4 max-h-[400px] overflow-y-auto"> 
-          <h2 className="mb-10 font-bold" style={{ fontSize: 30 }}>FILT<span className="text-lightblue4">ERS</span></h2>
+      <div className="flex flex-col md:flex-row gap-4"> 
+        {/* Filters Section */}
+        <div className="w-full md:w-1/4 pr-2 md:pr-4 max-h-[400px] overflow-y-auto text-sm md:text-base"> 
+          <h2 className="mb-6 md:mb-10 font-bold text-lg md:text-2xl">
+            FILT<span className="text-black">ERS</span>
+          </h2>
           {Object.keys(filters).map((key) => (
-            <div key={key} className="mb-2 border-b pb-2" style={{borderColor:"#50AFE4"}}>
+            <div key={key} className="mb-2 border-b pb-2 text-xs md:text-base" style={{borderColor:"#50AFE4"}}>
               <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleFilter(key)}>
                 <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                {filters[key] ? <FaMinus className="text-lightblue3"/> : <FaPlus className="text-lightblue3"/>}
+                {filters[key] ? <FaMinus className="text-gray-600 text-xs md:text-base"/> : <FaPlus className="text-gray-600 text-xs md:text-base"/>}
               </div>
               {filters[key] && (
                 <div className="mt-2 flex flex-col"> 
                   {key === 'availability' && (
-                    <label className="flex items-center gap-2"><input type="checkbox" /> In Stock</label>
+                    <label className="flex items-center gap-1 md:gap-2 text-xs md:text-base">
+                      <input type="checkbox" /> In Stock
+                    </label>
                   )}
                   {key === 'sizeGrouping' && ['XXS-XS', 'S-M', 'M-L', 'L-XL', '2X-4X'].map(size => (
-                    <label key={size} className="flex items-center gap-2">
+                    <label key={size} className="flex items-center gap-1 md:gap-2 text-xs md:text-base">
                       <input type="checkbox" /> {size}
                     </label>
                   ))}
                   {key === 'productType' && ['Bottoms', 'Dresses', 'Hoodies', 'One Pieces', 'Tops'].map(type => (
-                    <label key={type} className="flex items-center gap-2">
+                    <label key={type} className="flex items-center gap-1 md:gap-2 text-xs md:text-base">
                       <input type="checkbox" /> {type}
                     </label>
                   ))}
                   {key === 'style' && ['Bodysuit', 'Hoodie', 'Longsleeve', 'Maxi Dress'].map(style => (
-                    <label key={style} className="flex items-center gap-2">
+                    <label key={style} className="flex items-center gap-1 md:gap-2 text-xs md:text-base">
                       <input type="checkbox" /> {style}
                     </label>
                   ))}
                   {key === 'color' && (
-                    <div className="flex space-x-2 mt-2">
+                    <div className="flex space-x-1 md:space-x-2 mt-2">
                       {['black', 'pink', 'orange', 'red', 'white', 'blue', 'gold', 'yellow', 'green', 'purple'].map(color => (
-                        <div key={color} className="w-6 h-6 rounded-full" style={{ backgroundColor: colorMap[color] || color }} />
+                        <div key={color} className="w-4 md:w-6 h-4 md:h-6 rounded-full" style={{ backgroundColor: colorMap[color] || color }} />
                       ))}
                     </div>
                   )}
@@ -95,15 +103,16 @@ const ShopValentine = () => {
           ))}
         </div>
         
-        <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 overflow-auto">
+        {/* Products Section */}
+        <div className="w-full md:w-3/4 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 px-2 md:px-4">
           {products.map((product, index) => (
             <div key={index} className="border p-2 rounded-md flex flex-col items-center text-center">
-              <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2" />
-              <h2 className="text-lg font-semibold">{product.name}</h2>
-              <p className="text-sm text-gray-600">{product.price}</p>
-              <div className="flex space-x-2 mt-2 justify-center">
+              <img src={product.image} alt={product.name} className="w-full h-40 md:h-48 object-cover mb-2" />
+              <h2 className="text-sm md:text-lg font-semibold">{product.name}</h2>
+              <p className="text-xs md:text-sm text-gray-600">{product.price}</p>
+              <div className="flex space-x-1 md:space-x-2 mt-2 justify-center">
                 {product.colors.map(color => (
-                  <div key={color} className="w-4 h-4 rounded-full" style={{ backgroundColor: colorMap[color] }} />
+                  <div key={color} className="w-3 md:w-4 h-3 md:h-4 rounded-full" style={{ backgroundColor: colorMap[color] }} />
                 ))}
               </div>
             </div>

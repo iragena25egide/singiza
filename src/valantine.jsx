@@ -81,7 +81,7 @@ const Valentine = () => {
       <div className="mt-6 mb-6">
         <button
           onClick={() => navigate("/shop-valentine")}
-          className="px-6 py-2 bg-lightblue3 font-medium text-black rounded-md hover:bg-lightblue3 hover:text-white transition"
+          className="px-6 py-2 bg-gray-600 font-medium text-white rounded-md hover:bg-gray-800 hover:text-white transition"
         >
           Shop Hoodies
         </button>

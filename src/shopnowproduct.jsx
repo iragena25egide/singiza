@@ -38,10 +38,10 @@ const ShopnowProduct = () => {
   ];
 
   return (
-    <div className="p-20 px-20 bg-gray-50"> 
-      <div className="flex flex-col items-start mb-4">
-        <h1 className="font-bold text-3xl ml-8">Shop <span className="text-lightblue4">Best</span> T-Shirt</h1>
-        <select className="mt-2 p-2 border rounded-md self-end bg-blue-200" style={{ width: 200, borderColor: "#50AFE4" }}>
+    <div className="p-20 sm:p-20 bg-gray-50"> 
+      <div className="flex flex-col sm:flex-row sm:items-start mb-4 sm:justify-between">
+        <h1 className="font-bold text-2xl sm:text-3xl">Shop <span className="text-black">Best</span> T-Shirt</h1>
+        <select className="mt-2 sm:mt-0 p-2 border rounded-md w-full sm:w-52 border-gray-300" >
           <option>Featured</option>
           <option>Best selling</option>
           <option>Alphabetically, A-Z</option>
@@ -53,39 +53,34 @@ const ShopnowProduct = () => {
         </select>
       </div>
       
-      <div className="flex gap-10"> 
-        <div className="w-1/4 pr-4 max-h-[400px] overflow-y-auto"> 
-          <h2 className="mb-10 font-bold text-3xl">FILT<span className="text-lightblue4">ERS</span></h2>
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10"> 
+        <div className="w-full sm:w-1/4 pr-2 sm:pr-4 max-h-[400px] overflow-y-auto text-sm sm:text-base"> 
+          <h2 className="mb-6 sm:mb-10 font-bold text-xl sm:text-3xl">FILT<span className="text-black">ERS</span></h2>
           {Object.keys(filters).map((key) => (
-            <div key={key} className="mb-2 border-b pb-2">
+            <div key={key} className="mb-2 border-b pb-2 text-xs sm:text-sm">
               <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleFilter(key)}>
                 <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                {filters[key] ? <FaMinus className="text-lightblue3"/> : <FaPlus className="text-lightblue3"/>}
+                {filters[key] ? <FaMinus className="text-gray-600 text-xs sm:text-base"/> : <FaPlus className="text-gray-600 text-xs sm:text-base"/>}
               </div>
               {filters[key] && (
                 <div className="mt-2 flex flex-col"> 
                   {key === 'availability' && (
-                    <label className="flex items-center gap-2"><input type="checkbox" /> In Stock</label>
+                    <label className="flex items-center gap-1 sm:gap-2"><input type="checkbox" /> In Stock</label>
                   )}
                   {key === 'sizeGrouping' && ['XXS-XS', 'S-M', 'M-L', 'L-XL', '2X-4X'].map(size => (
-                    <label key={size} className="flex items-center gap-2">
+                    <label key={size} className="flex items-center gap-1 sm:gap-2">
                       <input type="checkbox" /> {size}
                     </label>
                   ))}
                   {key === 'productType' && ['Bottoms', 'Dresses', 'Hoodies', 'One Pieces', 'Tops'].map(type => (
-                    <label key={type} className="flex items-center gap-2">
+                    <label key={type} className="flex items-center gap-1 sm:gap-2">
                       <input type="checkbox" /> {type}
                     </label>
                   ))}
-                  {key === 'style' && ['Bodysuit', 'Hoodie', 'Longsleeve', 'Maxi Dress'].map(style => (
-                    <label key={style} className="flex items-center gap-2">
-                      <input type="checkbox" /> {style}
-                    </label>
-                  ))}
                   {key === 'color' && (
-                    <div className="flex space-x-2 mt-2">
+                    <div className="flex space-x-1 sm:space-x-2 mt-2">
                       {Object.keys(colorMap).map(color => (
-                        <div key={color} style={{ backgroundColor: colorMap[color], width: '16px', height: '16px', borderRadius: '50%' }} />
+                        <div key={color} style={{ backgroundColor: colorMap[color], width: '12px', height: '12px', borderRadius: '50%' }} />
                       ))}
                     </div>
                   )}
@@ -95,7 +90,7 @@ const ShopnowProduct = () => {
           ))}
         </div>
         
-        <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 overflow-auto">
+        <div className="w-full sm:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:px-4">
           {products.map((product, index) => (
             <div key={index} className="border p-4 rounded-md flex flex-col items-center text-center">
               <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2" />
@@ -110,7 +105,6 @@ const ShopnowProduct = () => {
           ))}
         </div>
       </div>
-      <hr className="mt-10 border-gray-300" />
     </div>
   );
 };

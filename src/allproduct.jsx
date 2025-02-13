@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
+const colorMap = {
+  chocolate: '#7B3F00',
+  gray: '#808080',
+  green: '#008000',
+  kaki: '#C3B091',
+  orange: '#FFA500',
+  pink: '#FFC0CB',
+  yellow: '#FFFF00',
+  blue: '#0000FF',
+  black: '#000000',
+  white: '#FFFFFF',
+  red: '#FF0000'
+};
+
 const AllProduct = () => {
   const [filters, setFilters] = useState({
     availability: false,
@@ -16,90 +30,82 @@ const AllProduct = () => {
   };
 
   const products = [
-    { name: 'Smooth Stretch Strapless Mini Dress', price: '163,200 RF RWF', image: 'dress1.png', colors: ['pink', 'black'] },
-    { name: 'Smooth Stretch Halter Mini Dress', price: '174,300 RF RWF', image: 'dress2.png', colors: ['pink', 'black'] },
-    { name: 'Soft Stretch Halter Maxi Dress', price: '144,700 RF RWF', image: 'dress3.png', colors: ['black', 'orange', 'red', 'white'] },
-    { name: 'Soft Stretch Asymmetrical Midi Dress', price: '133,500 RF RWF', image: 'dress4.png', colors: ['black', 'orange', 'red', 'white'] },
-    { name: 'Elegant Evening Gown', price: '200,000 RF RWF', image: 'dress5.png', colors: ['blue', 'gold'] },
-    { name: 'Casual Summer Dress', price: '120,000 RF RWF', image: 'dress6.png', colors: ['yellow', 'green'] },
-    { name: 'Floral Print Maxi Dress', price: '180,000 RF RWF', image: 'dress7.png', colors: ['purple', 'white'] },
-    { name: 'Chic Bodycon Dress', price: '150,000 RF RWF', image: 'dress8.png', colors: ['red', 'black'] },
+    { name: 'Black socks', price: '160,000 RF RWF', image: './image/socks/black-sock.png', colors: ['black'] },
+    { name: 'Royal socks', price: '150,000 RF RWF', image: './image/socks/blue-sock.png', colors: ['blue'] },
+    { name: 'Chocolate socks', price: '163,200 RF RWF', image: './image/socks/chocolate-sock.png', colors: ['chocolate'] },
+    { name: 'Gray socks', price: '174,300 RF RWF', image: './image/socks/gray-sock.png', colors: ['gray'] },
+    { name: 'Green socks', price: '144,700 RF RWF', image: './image/socks/green-sock.png', colors: ['green'] },
+    { name: 'Red socks', price: '170,000 RF RWF', image: './image/socks/red-sock.png', colors: ['red'] },
+    { name: 'White socks', price: '155,000 RF RWF', image: './image/socks/white-sock.png', colors: ['white'] },
+    { name: 'Yellow socks', price: '180,000 RF RWF', image: './image/socks/yellow-sock.png', colors: ['yellow'] },
+    { name: 'Blue Shirts', price: '150,000 RF RWF', image: './image/shirts/blue-tee.png', colors: ['blue'] },
+    { name: 'Chocolate Shirts', price: '163,200 RF RWF', image: './image/shirts/chocolate-tee.png', colors: ['chocolate'] },
+    { name: 'Gray Shirts', price: '174,300 RF RWF', image: './image/shirts/gray-tee.png', colors: ['gray'] },
+    { name: 'Pink Shirts', price: '174,300 RF RWF', image: './image/shirts/pink-tee.png', colors: ['pink'] },
+    { name: 'Orange Shirts', price: '174,300 RF RWF', image: './image/shirts/orange-tee.png', colors: ['orange'] },
+    { name: 'Purple Shirts', price: '170,000 RF RWF', image: './image/shirts/purple-tee.png', colors: ['purple'] },
+    { name: 'Red Shirts', price: '180,000 RF RWF', image: './image/shirts/red-shirt.png', colors: ['red'] },
+    { name: 'Teal Shirts', price: '160,000 RF RWF', image: './image/shirts/teal-shirt.png', colors: ['teal'] },
+    { name: '', price: '163,200 RF RWF', image: './image/hoodies/chock-hoodie.png', colors: ['chocolate'] },
+    { name: '', price: '174,300 RF RWF', image: './image/hoodies/gray-hoodie.png', colors: ['gray'] },
+    { name: '', price: '144,700 RF RWF', image: './image/hoodies/green-hoodie.png', colors: ['green'] },
+    { name: '', price: '133,500 RF RWF', image: './image/hoodies/kaki-hoodie.png', colors: ['kaki'] },
+    { name: '', price: '200,000 RF RWF', image: './image/hoodies/orange-hoodies.png', colors: ['orange'] },
+    { name: '', price: '120,000 RF RWF', image: './image/hoodies/pink-hoodie.png', colors: ['pink'] },
+    { name: '', price: '180,000 RF RWF', image: './image/hoodies/yellow-hoodie.png', colors: ['yellow'] },
+    { name: '', price: '150,000 RF RWF', image: './image/hoodies/RoyalHoodie.png', colors: ['blue'] },
   ];
 
   return (
-    <div className="p-20 px-20 bg-gray-50"> 
-      <div className="flex flex-col items-start mb-4">
-        <h1 className="font-bold" style={{ fontSize: 30, marginLeft: 30 }}>All Product</h1>
-        <select className="mt-2 p-2 border rounded-md self-end bg-gray-200" style={{ width: 200 }}>
-          <option>Featured</option>
-          <option>Best selling</option>
-          <option>Alphabetically, A-Z</option>
-          <option>Alphabetically, Z-A</option>
-          <option>Price, Low-High</option>
-          <option>Price, High-Low</option>
-          <option>Date, New-Old</option>
-          <option>Date, Old-New</option>
-        </select>
+    <div className="p-20 px-20 bg-gray-50">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-4">
+        <h1 className="font-bold text-3xl sm:ml-8 whitespace-nowrap">ALL <span className="text-black">BEST</span> PRODUCTS</h1>
       </div>
-      
-      <div className="flex gap-10"> 
-        <div className="w-1/4 pr-4 max-h-[400px] overflow-y-auto"> 
-          <h2 className="mb-10" style={{ fontSize: 30 }}>FILTERS</h2>
+
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
+        <div className="w-full sm:w-1/4 pr-2 sm:pr-4 text-sm sm:text-base">
+          <h2 className="mb-4 sm:mb-10 font-bold text-xl sm:text-3xl">FILT<span className="text-black">ERS</span></h2>
           {Object.keys(filters).map((key) => (
-            <div key={key} className="mb-2 border-b pb-2">
-              <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleFilter(key)}>
+            <div key={key} className="mb-2 border-b pb-2 text-xs sm:text-sm">
+              <div className="flex justify-between items-center cursor-pointer gap-1 sm:gap-2" onClick={() => toggleFilter(key)}>
                 <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                {filters[key] ? <FaMinus /> : <FaPlus />}
+                {filters[key] ? <FaMinus className="text-gray-600 text-xs sm:text-sm" /> : <FaPlus className="text-gray-600 text-xs sm:text-sm" />}
               </div>
-              {filters[key] && (
-                <div className="mt-2 flex flex-col"> 
-                  {key === 'availability' && (
-                    <label className="flex items-center gap-2"><input type="checkbox" /> In Stock</label>
-                  )}
-                  {key === 'sizeGrouping' && ['XXS-XS', 'S-M', 'M-L', 'L-XL', '2X-4X'].map(size => (
-                    <label key={size} className="flex items-center gap-2">
-                      <input type="checkbox" /> {size}
-                    </label>
-                  ))}
-                  {key === 'productType' && ['Bottoms', 'Dresses', 'Hoodies', 'One Pieces', 'Tops'].map(type => (
-                    <label key={type} className="flex items-center gap-2">
-                      <input type="checkbox" /> {type}
-                    </label>
-                  ))}
-                  {key === 'style' && ['Bodysuit', 'Hoodie', 'Longsleeve', 'Maxi Dress'].map(style => (
-                    <label key={style} className="flex items-center gap-2">
-                      <input type="checkbox" /> {style}
-                    </label>
-                  ))}
-                  {key === 'color' && (
-                    <div className="flex space-x-2 mt-2">
-                      {['black', 'pink', 'orange', 'red', 'white', 'blue', 'gold', 'yellow', 'green', 'purple'].map(color => (
-                        <div key={color} className={`w-6 h-6 rounded-full bg-${color}-500`} />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
             </div>
           ))}
         </div>
-        
-        <div className="w-3/4 grid grid-cols-4 gap-4 overflow-auto">
+
+        {/* Product Section with Max-Height & Custom Scrollbar on Desktop */}
+        <div className="w-full sm:w-3/4 max-h-[600px] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 px-2 sm:px-4 custom-scrollbar">
           {products.map((product, index) => (
-            <div key={index} className="border p-2 rounded-md">
+            <div key={index} className="border p-4 rounded-md flex flex-col items-center bg-gray-50">
               <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2" />
-              <h2 className="text-lg font-semibold">{product.name}</h2>
-              <p className="text-sm text-gray-600">{product.price}</p>
-              <div className="flex space-x-2 mt-2">
+              <h2 className="text-sm sm:text-lg font-semibold text-center">{product.name}</h2>
+              <p className="text-xs sm:text-sm text-gray-600 text-center">{product.price}</p>
+              <div className="flex space-x-1 sm:space-x-2 mt-2">
                 {product.colors.map(color => (
-                  <div key={color} className={`w-4 h-4 rounded-full bg-${color}-500`} />
+                  <div key={color} style={{ backgroundColor: colorMap[color] }} className="w-4 h-4 sm:w-5 sm:h-5 rounded-full border border-gray-300"></div>
                 ))}
               </div>
             </div>
           ))}
         </div>
       </div>
-      <hr className="mt-10 border-gray-300" />
+
+      <style jsx>{`
+        @media (min-width: 640px) {
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+          }
+        }
+      `}</style>
     </div>
   );
 };

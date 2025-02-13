@@ -15,20 +15,25 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="relative w-full flex justify-center p-4 mt-10">
-      {/* Title for the gallery at the top of the container */}
-      <h2 className="absolute top-0 left-1/2 transform -translate-x-1/2 text-xl font-bold mb-12"style={{fontSize:40}}>New in <span className="text-lightblue4">stock</span></h2> {/* Moved title */}
-      <h2 className="absolute top-12 left-1/2 transform -translate-x-1/2 text-xl font-bold mb-10 "style={{fontSize:30}}>Wall-<span className="text-lightblue4">Mounted</span> Table</h2> {/* Moved title */}
+    <div className="relative w-full flex flex-col items-center p-4 mt-10">
+      {/* Titles adjusted for mobile responsiveness */}
+      <div className="text-center mb-6">
+        <h2 className="text-lg sm:text-xl md:text-3xl font-bold">
+          New in <span className="text-gray-400">Stock</span>
+        </h2>
+        <h2 className="text-lg sm:text-xl md:text-3xl font-bold">
+          Wall-<span className="text-gray-400">Mounted</span> Table
+        </h2>
+      </div>
 
       {/* Gallery Container */}
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-[2px] left-20 max-w-[90%] md:max-w-[80%]">
-        {/* Adjust left-20 placement for larger screens */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 max-w-[95%] sm:max-w-[85%] md:max-w-[80%]">
         {images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Gallery Image ${index + 1}`}
-            className="w-full max-h-[260px] object-cover cursor-pointer" // Set fixed height to create a square-like ratio
+            className="w-full max-h-[220px] sm:max-h-[240px] md:max-h-[260px] object-cover cursor-pointer rounded"
             onClick={() => setSelectedImage(image)}
           />
         ))}

@@ -12,17 +12,17 @@ const Contact = () => {
   return (
     <div className="bg-gray-50 text-black p-6 flex flex-col md:flex-row justify-between items-start md:items-center px-20">
       <div className="md:w-1/2 text-left" style={{maxWidth:450}}>
-        <h3 className="font-bold " style={{ fontSize: 50 }}>SING<span className="text-lightblue4">IZA</span></h3>
-        <h1 className="max-w-sm text-2xl font-semibold">EDITED COLLECTION <span className="text-lightblue5">BY KYLIE</span> JENNER <span className="text-lightblue5">AND SPECIAL </span>GUEST COLLABORATORS</h1>
-        <h2 className="font-bold text-lg mt-10 ">NEVER <span className="text-lightblue5">MISS AN</span> UPDATE</h2>
+        <h3 className="font-bold " style={{ fontSize: 50 }}>SING<span className="text-gray-400">IZA</span></h3>
+        <h1 className="max-w-sm text-2xl font-semibold">EDITED COLLECTION <span className="text-gray-400">BY KYLIE</span> JENNER <span className="text-gray-400">AND SPECIAL </span>GUEST COLLABORATORS</h1>
+        <h2 className="font-bold text-lg mt-10 ">NEVER <span className="text-gray-400">MISS AN</span> UPDATE</h2>
         <p className="mt-2 text-gray-700">Enter your email to receive launch announcements, updates + Early Access.</p>
-        <input type="email" placeholder="Email" className="mt-4 p-2 w-full border border-gray-300 bg-gray-300"  style={{borderRadius:10}} />
+        <input type="email" placeholder="Email" className="mt-4 p-2 w-full border border-gray bg-white"  style={{borderRadius:10,borderWidth:2}} />
         <p className="mt-2 text-sm text-gray-400" style={{fontSize:12}}>BY SIGNING UP YOU AGREE TO RECEIVE RECURRING AUTOMATED MARKETING MESSAGES FROM SINGIZA. VIEW <a href="#" className="underline">TERMS</a> & <a href="#" className="underline">PRIVACY</a></p>
-        <button className="mt-4 p-2 bg-lightblue3 text-black w-full hover:text-white"style={{borderRadius:10}}>Submit</button>
+        <button className="mt-4 p-2 bg-white text-black w-full hover:text-white border hover:bg-gray-600"style={{borderRadius:10,borderWidth:2,borderColor:'#cccccc'}}>Submit</button>
       </div>
       
       <div className="w-full md:w-1/2 flex flex-col items-end ml-auto"> {/* Align to the right */}
-      <div className="w-full flex flex-col md:flex-row md:justify-between md:items-start text-left text-lightblue4"> {/* Adjusted layout */}
+      <div className="w-full flex flex-col md:flex-row md:justify-between md:items-start text-left text-gray-400"> {/* Adjusted layout */}
         {[
           { title: "Shop All", links: ["Shop All Products", "Best Sellers", "Digital Gift Card"] },
           { title: "Account", links: ["Login"] },
@@ -55,13 +55,13 @@ const Contact = () => {
       
       {/* Social Media Icons centered under 'Account' on desktop */}
       <div className="flex space-x-3 mt-4 justify-center md:w-1/3 md:mx-auto"> {/* Icons centered below middle section */}
-        <FaTwitter className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaFacebook className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaInstagram className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaLinkedin className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaPinterest className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaYoutube className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
-        <FaTiktok className="text-lightblue4 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaTwitter className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaFacebook className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaInstagram className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaLinkedin className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaPinterest className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaYoutube className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
+        <FaTiktok className="text-gray-400 hover:text-lightblue2 cursor-pointer text-lg" />
       </div>
     </div>
     </div>
