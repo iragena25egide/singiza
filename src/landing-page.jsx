@@ -16,7 +16,12 @@ const SingizaShop = () => {
   const handleMenuClick = (content) => {
     setActiveContent(content);
     setMenuOpen(false);
+  
+    if (content === "shop") {
+      navigate("/shop"); // Redirect to the /shop page
+    }
   };
+  
 
   const handleLogin = () => {
     if (username === "Dalton" && password === "11111") {
