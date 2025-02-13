@@ -88,11 +88,12 @@ const Header = () => {
         <IoClose size={20} />
       </button>
     </div>
-    <button className="w-full py-2 mt-4 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-500 hover:text-white">Shop Now</button>
+    <button className="w-full py-2 mt-4 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-500 hover:text-white"
+    onClick={() => navigate("/shop")}>Shop Now</button>
     
     <h3 className="text-center mt-6 text-lg font-semibold">Categories</h3>
     <ul className="mt-4 space-y-4 pl-4">
-      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate()}>SINGIZA Wall-mounted tables</li>
+      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop")}>SINGIZA Wall-mounted tables</li>
       <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-now")}>SINGIZA TEES</li>
       <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-valentine")}>SINGIZA HOODIES</li>
       <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-essential")}>SINGIZA SOCKS</li>

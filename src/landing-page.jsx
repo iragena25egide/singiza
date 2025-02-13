@@ -60,25 +60,28 @@ const SingizaShop = () => {
           </p>
         </header>
 
-        {/* Side Menu */}
-        {menuOpen && (
-          <nav
-            className="absolute top-16 left-4 w-48 rounded-lg text-white bg-gray-600 shadow-lg bg-opacity-80 p-4 z-50"
-            
-          >
-            <div className="flex justify-end mb-4">
-              <FaTimes size={20} className="cursor-pointer" onClick={() => setMenuOpen(false)} />
-            </div>
-            <div className="flex flex-col space-y-4">
-              <p className="cursor-pointer font-bold" onClick={() => handleMenuClick("shop")}>
-                Shop
-              </p>
-              <p className="cursor-pointer font-bold" onClick={() => handleMenuClick("location")}>
-                Location
-              </p>
-            </div>
-          </nav>
-        )}
+         {/* Left Side Menu */}
+{menuOpen && (
+  <div className="fixed top-0 left-0 w-80 h-full bg-gray-700 bg-opacity-90 backdrop-blur-md p-6 text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50">
+    <div className="flex justify-between items-center">
+      <h2 className="text-lg font-bold">SINGIZA<span className="text-white"> SHOP</span></h2>
+      <button onClick={() => setMenuOpen(false)} className="p-2 bg-gray-600 rounded-full">
+
+        <FaTimes size={20} />
+      </button>
+    </div>
+    <button className="w-full py-2 mt-4 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-500 hover:text-white"
+    onClick={() => navigate("/shop")}>Shop Now</button>
+    
+    <h3 className="text-center mt-6 text-lg font-semibold">Categories</h3>
+    <ul className="mt-4 space-y-4 pl-4">
+      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop")}>SINGIZA Wall-mounted tables</li>
+      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-now")}>SINGIZA TEES</li>
+      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-valentine")}>SINGIZA HOODIES</li>
+      <li className="border-b border-gray-300 cursor-pointer pb-2 hover:text-gray-400"onClick={() => navigate("/shop-essential")}>SINGIZA SOCKS</li>
+    </ul>
+  </div>
+)}
 
         {/* Content Area */}
         <main className="flex-1 flex items-center justify-center text-white text-left max-w-5xl mx-auto overflow-y-auto">

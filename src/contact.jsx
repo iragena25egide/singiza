@@ -13,7 +13,7 @@ const Contact = () => {
     <div className="bg-gray-50 text-black p-6 flex flex-col md:flex-row justify-between items-start md:items-center px-20">
       <div className="md:w-1/2 text-left" style={{maxWidth:450}}>
         <h3 className="font-bold " style={{ fontSize: 50 }}>SING<span className="text-gray-400">IZA</span></h3>
-        <h1 className="max-w-sm text-2xl font-semibold">EDITED COLLECTION <span className="text-gray-400">BY KYLIE</span> JENNER <span className="text-gray-400">AND SPECIAL </span>GUEST COLLABORATORS</h1>
+        <h1 className="max-w-sm text-2xl font-semibold">EDITED COLLECTION <span className="text-gray-400">BY </span>SINIGZA<span className="text-gray-400"></span></h1>
         <h2 className="font-bold text-lg mt-10 ">NEVER <span className="text-gray-400">MISS AN</span> UPDATE</h2>
         <p className="mt-2 text-gray-700">Enter your email to receive launch announcements, updates + Early Access.</p>
         <input type="email" placeholder="Email" className="mt-4 p-2 w-full border border-gray bg-white"  style={{borderRadius:10,borderWidth:2}} />
